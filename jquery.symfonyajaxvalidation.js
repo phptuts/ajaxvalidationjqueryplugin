@@ -77,10 +77,10 @@
         {
               for(var id in errors)
               {
-                    $element.find("#" + id).parents('.form_valid').addClass('has-error');
-                    $element.find("#" + id).parents('.form_valid').find('span.help-block').html(errors[id][0]);
-                    $element.find("#" + id).parents('.form_valid').find('span.hide_error').show();
-                    $element.find("#" + id).parents('.form_valid').show();
+                    $element.find("#" + id).parents('.form-group').addClass('has-error');
+                    $element.find("#" + id).parents('.form-group').find('span.help-block').html(errors[id][0]);
+                    $element.find("#" + id).parents('.form-group').find('span.hide_error').show();
+                    $element.find("#" + id).parents('.form-group').show();
               }
         };
         
