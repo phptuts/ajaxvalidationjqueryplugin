@@ -1,0 +1,23 @@
+{
+  "name": "ajaxvalidationjqueryplugin",
+  "homepage": "https://github.com/phptuts/ajaxvalidationjqueryplugin",
+  "authors": [
+    "phptuts <php.noah@gmail.com>"
+  ],
+  "description": "",
+  "dependencies": {
+    "jquery": "^2.0.0",
+    "bootstrap": "^3.0.0",
+    "jquery-form": "*"
+  },
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

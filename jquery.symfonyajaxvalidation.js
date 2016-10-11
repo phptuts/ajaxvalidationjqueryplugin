@@ -36,7 +36,7 @@
                     //We loop through all the form elements and turn off the errors.
                     $element.find('input, textarea, select').each(function()
                     {
-                        $.turnOffValidation($(this));
+                        plugin.turnOffValidation($(this));
                     });
                     //Fake error are ones that are attached to the whole form or to a whole collection.
                     $element.find('.' + plugin.settings.fake_error).hide();
@@ -91,6 +91,18 @@
         {
             alert(plugin.settings.error_message);
         };
+
+        plugin.turnOffValidation = function(element, fake_error_class) {
+            if(typeof fake_error_class === 'undefined')
+            {
+                fake_error_class = 'fake_error_container';
+            }
+            var parent_div =  element.parents("div.form_valid");
+            parent_div.find("span.help-block ").hide();
+            parent_div.find("span.form-control-feedback").hide();
+            parent_div.removeClass("has-error");
+            return $;
+        };
         
         plugin.init = function()
         {
@@ -125,7 +137,7 @@
             $(document).on("focusout", "form#" + $element.attr('id') + " input, form#" + $element.attr('id') + " select, form#" + $element.attr('id') + " textarea", function(){
                if($(this).val() !== "")
                {
-                  $.turnOffValidation($(this));           
+                  plugin.turnOffValidation($(this));
                } 
             });
             
@@ -137,7 +149,7 @@
             $(document).on("change", "form#" + $element.attr('id') + " input[type=file]", function(){
                if($(this).val() !== "")
                {
-                  $.turnOffValidation($(this));           
+                  plugin.turnOffValidation($(this));
                } 
             });
             
