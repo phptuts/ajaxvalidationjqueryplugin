@@ -97,7 +97,7 @@
             {
                 fake_error_class = 'fake_error_container';
             }
-            var parent_div =  element.parents("div.form_valid");
+            var parent_div =  element.parents("div.form-group");
             parent_div.find("span.help-block ").hide();
             parent_div.find("span.form-control-feedback").hide();
             parent_div.removeClass("has-error");
